@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1C02D6253C061F0058CD21 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C02D5253C061F0058CD21 /* LoginController.swift */; };
 		9F46EFA6253BFDEF0046C4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EFA5253BFDEF0046C4A6 /* AppDelegate.swift */; };
 		9F46EFA8253BFDEF0046C4A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EFA7253BFDEF0046C4A6 /* SceneDelegate.swift */; };
-		9F46EFAA253BFDEF0046C4A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EFA9253BFDEF0046C4A6 /* ViewController.swift */; };
 		9F46EFAD253BFDEF0046C4A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EFAB253BFDEF0046C4A6 /* Main.storyboard */; };
 		9F46EFAF253BFDF00046C4A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EFAE253BFDF00046C4A6 /* Assets.xcassets */; };
 		9F46EFB2253BFDF00046C4A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EFB0253BFDF00046C4A6 /* LaunchScreen.storyboard */; };
+		9FC81986253C107700F4141B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC81985253C107700F4141B /* Extensions.swift */; };
+		9FC81989253C5AA700F4141B /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC81988253C5AA700F4141B /* SignUpController.swift */; };
+		9FC8198C253C634500F4141B /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8198B253C634500F4141B /* AuthButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F1C02D5253C061F0058CD21 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9F46EFA2253BFDEF0046C4A6 /* uber-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uber-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F46EFA5253BFDEF0046C4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F46EFA7253BFDEF0046C4A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9F46EFA9253BFDEF0046C4A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F46EFAC253BFDEF0046C4A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F46EFAE253BFDF00046C4A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F46EFB1253BFDF00046C4A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F46EFB3253BFDF00046C4A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC81985253C107700F4141B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9FC81988253C5AA700F4141B /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		9FC8198B253C634500F4141B /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		9F46EFA4253BFDEF0046C4A6 /* uber-clone */ = {
 			isa = PBXGroup;
 			children = (
+				9F46EFBF253C05350046C4A6 /* Model */,
+				9F46EFBE253C05330046C4A6 /* View */,
+				9F46EFBD253C05300046C4A6 /* Controller */,
+				9F46EFBC253C052E0046C4A6 /* Service */,
+				9F46EFBA253C05180046C4A6 /* Utils */,
 				9F46EFA5253BFDEF0046C4A6 /* AppDelegate.swift */,
 				9F46EFA7253BFDEF0046C4A6 /* SceneDelegate.swift */,
-				9F46EFA9253BFDEF0046C4A6 /* ViewController.swift */,
 				9F46EFAB253BFDEF0046C4A6 /* Main.storyboard */,
 				9F46EFAE253BFDF00046C4A6 /* Assets.xcassets */,
 				9F46EFB0253BFDF00046C4A6 /* LaunchScreen.storyboard */,
 				9F46EFB3253BFDF00046C4A6 /* Info.plist */,
 			);
 			path = "uber-clone";
+			sourceTree = "<group>";
+		};
+		9F46EFBA253C05180046C4A6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9FC81985253C107700F4141B /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9F46EFBC253C052E0046C4A6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9F46EFBD253C05300046C4A6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C02D5253C061F0058CD21 /* LoginController.swift */,
+				9FC81988253C5AA700F4141B /* SignUpController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9F46EFBE253C05330046C4A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9FC8198B253C634500F4141B /* AuthButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F46EFBF253C05350046C4A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F46EFAA253BFDEF0046C4A6 /* ViewController.swift in Sources */,
+				9FC81989253C5AA700F4141B /* SignUpController.swift in Sources */,
+				9FC8198C253C634500F4141B /* AuthButton.swift in Sources */,
 				9F46EFA6253BFDEF0046C4A6 /* AppDelegate.swift in Sources */,
+				9F1C02D6253C061F0058CD21 /* LoginController.swift in Sources */,
 				9F46EFA8253BFDEF0046C4A6 /* SceneDelegate.swift in Sources */,
+				9FC81986253C107700F4141B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
