@@ -14,12 +14,14 @@ class HomeController: UIViewController {
     // MARK: - Properties
     
     private let mapView = MKMapView()
+    private let locationManager = CLLocationManager()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
+        enableLocationServices()
     }
     
     // MARK: - API
@@ -47,9 +49,50 @@ class HomeController: UIViewController {
     // MARK: - Helpers
     
     func configureUI() {
-        navigationController?.navigationBar.isHidden = true
+        configureNavigationBar()
+        configureMapView()
         
+    }
+    
+    func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    func configureMapView() {
         view.addSubview(mapView)
         mapView.frame = view.frame
+        
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
     }
+}
+
+// MARK: - LocationServices
+
+extension HomeController: CLLocationManagerDelegate {
+    private func enableLocationServices() {
+        locationManager.delegate = self
+
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            break
+        case .authorizedAlways:
+            locationManager.startUpdatingLocation()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        case .authorizedWhenInUse:
+            locationManager.requestAlwaysAuthorization()
+        @unknown default:
+            break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
+    
+    
 }
