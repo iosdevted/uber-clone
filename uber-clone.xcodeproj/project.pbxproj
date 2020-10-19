@@ -10,6 +10,9 @@
 		9F03A91D253D791E00DFE3BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F03A91C253D791E00DFE3BC /* GoogleService-Info.plist */; };
 		9F1C02D6253C061F0058CD21 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C02D5253C061F0058CD21 /* LoginController.swift */; };
 		9F3A77EC253D8362007B46EB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A77EB253D8362007B46EB /* HomeController.swift */; };
+		9F3A77EF253DB8A2007B46EB /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A77EE253DB8A2007B46EB /* LocationInputActivationView.swift */; };
+		9F3A77F2253DC4CF007B46EB /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A77F1253DC4CF007B46EB /* LocationInputView.swift */; };
+		9F3A77F5253DEDA7007B46EB /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A77F4253DEDA7007B46EB /* LocationCell.swift */; };
 		9F46EFA6253BFDEF0046C4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EFA5253BFDEF0046C4A6 /* AppDelegate.swift */; };
 		9F46EFA8253BFDEF0046C4A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EFA7253BFDEF0046C4A6 /* SceneDelegate.swift */; };
 		9F46EFAD253BFDEF0046C4A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EFAB253BFDEF0046C4A6 /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 		9F03A91C253D791E00DFE3BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F1C02D5253C061F0058CD21 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9F3A77EB253D8362007B46EB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		9F3A77EE253DB8A2007B46EB /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
+		9F3A77F1253DC4CF007B46EB /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		9F3A77F4253DEDA7007B46EB /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		9F46EFA2253BFDEF0046C4A6 /* uber-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uber-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F46EFA5253BFDEF0046C4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F46EFA7253BFDEF0046C4A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				9FC8198B253C634500F4141B /* AuthButton.swift */,
+				9F3A77EE253DB8A2007B46EB /* LocationInputActivationView.swift */,
+				9F3A77F1253DC4CF007B46EB /* LocationInputView.swift */,
+				9F3A77F4253DEDA7007B46EB /* LocationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,9 +273,12 @@
 				9FC81989253C5AA700F4141B /* SignUpController.swift in Sources */,
 				9FC8198C253C634500F4141B /* AuthButton.swift in Sources */,
 				9F3A77EC253D8362007B46EB /* HomeController.swift in Sources */,
+				9F3A77F2253DC4CF007B46EB /* LocationInputView.swift in Sources */,
 				9F46EFA6253BFDEF0046C4A6 /* AppDelegate.swift in Sources */,
 				9F1C02D6253C061F0058CD21 /* LoginController.swift in Sources */,
+				9F3A77F5253DEDA7007B46EB /* LocationCell.swift in Sources */,
 				9F46EFA8253BFDEF0046C4A6 /* SceneDelegate.swift in Sources */,
+				9F3A77EF253DB8A2007B46EB /* LocationInputActivationView.swift in Sources */,
 				9FC81986253C107700F4141B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
