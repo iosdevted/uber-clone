@@ -7,10 +7,14 @@
 
 import UIKit
 import Firebase
+import GeoFire
 
 class SignUpController: UIViewController {
     
     // MARK: - Properties
+    
+    private var location = LocationHandler.shared.locationManager.location
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "UBER"
@@ -92,6 +96,7 @@ class SignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
     }
     
     // MARK: - Selectors
@@ -113,16 +118,16 @@ class SignUpController: UIViewController {
             let values = ["email": email,
                           "fullname": fullname,
                           "accountType": accountTypeIndex] as [String : Any]
-         
-            Database.database().reference().child("users").child(uid).updateChildValues(values) { (error, ref) in
-                if let error = error {
-                    print("DEBUG: Failed to register user with error \(error.localizedDescription)")
-                    return
+            
+            if accountTypeIndex == 1 {
+                let geoFire = GeoFire(firebaseRef: REF_DRIVER_LOCATION)
+                guard let location = self.location else { return }
+                
+                geoFire.setLocation(location, forKey: uid) { (error) in
+                    self.uploadUserDataAndShowHomeController(uid: uid, values: values)
                 }
-                guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeController else { return }
-                controller.configureUI()
-                self.dismiss(animated: true, completion: nil)
             }
+            self.uploadUserDataAndShowHomeController(uid: uid, values: values)
         }
     }
     
@@ -131,6 +136,15 @@ class SignUpController: UIViewController {
     }
     
     // MARK: - Helpers
+    
+    func uploadUserDataAndShowHomeController(uid: String, values: [String: Any]) {
+        REF_USERS.child(uid).updateChildValues(values, withCompletionBlock: { (error, ref) in
+            let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
+            guard let controller = keyWindow?.rootViewController as? HomeController else { return }
+            controller.configure()
+            self.dismiss(animated: true, completion: nil)
+        }
+        )}
     func configureUI() {
         view.backgroundColor = .backgroundColor
         
