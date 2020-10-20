@@ -22,6 +22,10 @@ class HomeController: UIViewController {
     private let locationInputView = LocationInputView()
     private let tableView = UITableView()
     
+    private var user: User? {
+        didSet { locationInputView.user = user }
+    }
+    
     private final let locationInputViewHeight: CGFloat = 200
     // MARK: - Lifecycle
     
@@ -29,9 +33,16 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
         enableLocationServices()
+        fetchUserData()
     }
     
     // MARK: - API
+    
+    func fetchUserData() {
+        Service.shared.fetchUserData { user in
+            self.user = user
+        }
+    }
 
     func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser?.uid == nil {
