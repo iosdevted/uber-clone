@@ -18,6 +18,7 @@
 		9F46EFAD253BFDEF0046C4A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EFAB253BFDEF0046C4A6 /* Main.storyboard */; };
 		9F46EFAF253BFDF00046C4A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EFAE253BFDF00046C4A6 /* Assets.xcassets */; };
 		9F46EFB2253BFDF00046C4A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EFB0253BFDF00046C4A6 /* LaunchScreen.storyboard */; };
+		9F4A4D24254073AE0068A45C /* RideActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A4D23254073AE0068A45C /* RideActionView.swift */; };
 		9F636527253EB61800DCC065 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F636526253EB61800DCC065 /* Service.swift */; };
 		9F63652A253EBDDA00DCC065 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F636529253EBDDA00DCC065 /* User.swift */; };
 		9F63652D253EC7E300DCC065 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63652C253EC7E300DCC065 /* LocationHandler.swift */; };
@@ -44,6 +45,7 @@
 		9F46EFAE253BFDF00046C4A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F46EFB1253BFDF00046C4A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F46EFB3253BFDF00046C4A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F4A4D23254073AE0068A45C /* RideActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideActionView.swift; sourceTree = "<group>"; };
 		9F636526253EB61800DCC065 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9F636529253EBDDA00DCC065 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9F63652C253EC7E300DCC065 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				9F3A77EE253DB8A2007B46EB /* LocationInputActivationView.swift */,
 				9F3A77F1253DC4CF007B46EB /* LocationInputView.swift */,
 				9F3A77F4253DEDA7007B46EB /* LocationCell.swift */,
+				9F4A4D23254073AE0068A45C /* RideActionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				9F3A77F5253DEDA7007B46EB /* LocationCell.swift in Sources */,
 				9F63652D253EC7E300DCC065 /* LocationHandler.swift in Sources */,
 				9F46EFA8253BFDEF0046C4A6 /* SceneDelegate.swift in Sources */,
+				9F4A4D24254073AE0068A45C /* RideActionView.swift in Sources */,
 				9F63652A253EBDDA00DCC065 /* User.swift in Sources */,
 				9F636527253EB61800DCC065 /* Service.swift in Sources */,
 				9F3A77EF253DB8A2007B46EB /* LocationInputActivationView.swift in Sources */,
