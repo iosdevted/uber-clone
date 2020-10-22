@@ -39,7 +39,13 @@ class HomeController: UIViewController {
     private var route: MKRoute?
     
     private var user: User? {
-        didSet { locationInputView.user = user }
+        didSet {
+            locationInputView.user = user
+            if user?.accountType == .passenger {
+                fetchDrivers()
+                configureLocationInputActivationView()
+            }
+        }
     }
     
     private let actionButton: UIButton = {
@@ -137,7 +143,6 @@ class HomeController: UIViewController {
     func configure() {
         configureUI()
         fetchUserData()
-        fetchDrivers()
     }
     
     fileprivate func configureActionButton(config: ActionButtonConfiguration) {
@@ -163,7 +168,11 @@ class HomeController: UIViewController {
                             paddingLeft: 20,
                             width: 30,
                             height: 30)
-        
+
+        configureTableView()
+    }
+    
+    func configureLocationInputActivationView() {
         view.addSubview(inputActivationView)
         inputActivationView.centerX(inView: view)
         inputActivationView.setDimensions(height: 50, width: view.frame.width - 64)
@@ -174,8 +183,6 @@ class HomeController: UIViewController {
         UIView.animate(withDuration: 2) {
             self.inputActivationView.alpha = 1
         }
-        
-        configureTableView()
     }
     
     func configureNavigationBar() {
@@ -211,6 +218,7 @@ class HomeController: UIViewController {
     
     func configureRideActionView() {
         view.addSubview(rideActionView)
+        rideActionView.delegate = self
         rideActionView.frame = CGRect(x: 0,
                                       y: view.frame.height,
                                       width: view.frame.width,
@@ -417,5 +425,22 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
             
             self.animateRideActionView(shouldShow: true, destination: selectedPlacemark)
         }
+    }
+}
+
+extension HomeController: RideActionViewDelegate {
+    func uploadTrip(_ view: RideActionView) {
+        guard let pickupCoordinates = locationManager?.location?.coordinate else { return }
+        guard let destinationCoordinates = view.destination?.coordinate else { return }
+        Service.shared.uploadTrip(pickupCoordinates, destinationCoordinates) { (err, ref) in
+            if let error = err {
+                print("DEBUG: Failed to upload trip with error \(error.localizedDescription)")
+                return
+            }
+        }
+    }
+    
+    func uploadTrip() {
+
     }
 }
