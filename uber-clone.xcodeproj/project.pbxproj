@@ -23,6 +23,7 @@
 		9F63652A253EBDDA00DCC065 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F636529253EBDDA00DCC065 /* User.swift */; };
 		9F63652D253EC7E300DCC065 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63652C253EC7E300DCC065 /* LocationHandler.swift */; };
 		9F97068A25416791007F5014 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97068925416791007F5014 /* Trip.swift */; };
+		9F97068D25417945007F5014 /* PickupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97068C25417945007F5014 /* PickupController.swift */; };
 		9FC81986253C107700F4141B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC81985253C107700F4141B /* Extensions.swift */; };
 		9FC81989253C5AA700F4141B /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC81988253C5AA700F4141B /* SignUpController.swift */; };
 		9FC8198C253C634500F4141B /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8198B253C634500F4141B /* AuthButton.swift */; };
@@ -51,6 +52,7 @@
 		9F636529253EBDDA00DCC065 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9F63652C253EC7E300DCC065 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		9F97068925416791007F5014 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		9F97068C25417945007F5014 /* PickupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupController.swift; sourceTree = "<group>"; };
 		9FC81985253C107700F4141B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9FC81988253C5AA700F4141B /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		9FC8198B253C634500F4141B /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				9F1C02D5253C061F0058CD21 /* LoginController.swift */,
 				9FC81988253C5AA700F4141B /* SignUpController.swift */,
 				9F3A77EB253D8362007B46EB /* HomeController.swift */,
+				9F97068C25417945007F5014 /* PickupController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				9F3A77EC253D8362007B46EB /* HomeController.swift in Sources */,
 				9F3A77F2253DC4CF007B46EB /* LocationInputView.swift in Sources */,
 				9F97068A25416791007F5014 /* Trip.swift in Sources */,
+				9F97068D25417945007F5014 /* PickupController.swift in Sources */,
 				9FC9E154253F037500D90B30 /* DriverAnnotation.swift in Sources */,
 				9F46EFA6253BFDEF0046C4A6 /* AppDelegate.swift in Sources */,
 				9F1C02D6253C061F0058CD21 /* LoginController.swift in Sources */,

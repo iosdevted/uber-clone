@@ -41,10 +41,23 @@ class HomeController: UIViewController {
     private var user: User? {
         didSet {
             locationInputView.user = user
+            
             if user?.accountType == .passenger {
                 fetchDrivers()
                 configureLocationInputActivationView()
+            } else {
+                observeTrips()
             }
+        }
+    }
+    
+    private var trip: Trip? {
+        didSet {
+            guard let trip = trip else { return }
+            let controller = PickupController(trip: trip)
+            controller.modalPresentationStyle = .fullScreen
+            controller.delegate = self
+            self.present(controller, animated: true, completion: nil)
         }
     }
     
@@ -61,6 +74,11 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
         enableLocationServices()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let trip = trip else { return }
+        print("DEBUG: - trip state is \(trip.state)")
     }
     
     // MARK: - Selectors
@@ -110,6 +128,12 @@ class HomeController: UIViewController {
             if !driverIsVisible {
                 self.mapView.addAnnotation(annotation)
             }
+        }
+    }
+    
+    func observeTrips() {
+        Service.shared.oberveTrips { (trip) in
+            self.trip = trip
         }
     }
 
@@ -428,6 +452,8 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - RideActionViewDelegate
+
 extension HomeController: RideActionViewDelegate {
     func uploadTrip(_ view: RideActionView) {
         guard let pickupCoordinates = locationManager?.location?.coordinate else { return }
@@ -437,10 +463,16 @@ extension HomeController: RideActionViewDelegate {
                 print("DEBUG: Failed to upload trip with error \(error.localizedDescription)")
                 return
             }
+            print("DEBUG: Did upload trip successfully")
         }
     }
-    
-    func uploadTrip() {
+}
 
+// MARK: - PickupControllerDelegate
+
+extension HomeController: PickupControllerDelegate {
+    func didAcceptTrip(_ trip: Trip) {
+        self.trip?.state = .accepted
+        self.dismiss(animated: true, completion: nil)
     }
 }
