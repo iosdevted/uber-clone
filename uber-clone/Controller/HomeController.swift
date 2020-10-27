@@ -26,6 +26,10 @@ private enum AnnotationType: String {
     case destination
 }
 
+protocol HomeControllerDelegate: class {
+    func handleMenuToggle()
+}
+
 class HomeController: UIViewController {
     
     // MARK: - Properties
@@ -43,7 +47,9 @@ class HomeController: UIViewController {
     private var actionButtonConfig = ActionButtonConfiguration()
     private var route: MKRoute?
     
-    private var user: User? {
+    weak var delegate: HomeControllerDelegate?
+    
+    var user: User? {
         didSet {
             locationInputView.user = user
             
@@ -84,13 +90,8 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkIfUserIsLoggedIn()
         enableLocationServices()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        guard let trip = trip else { return }
-        print("DEBUG: - trip state is \(trip.state)")
+        configureUI()
     }
     
     // MARK: - Selectors
@@ -98,7 +99,7 @@ class HomeController: UIViewController {
     @objc func handleButtonPressed() {
         switch actionButtonConfig {
         case .showMenu:
-            print("DEBUG: - showmenu")
+            delegate?.handleMenuToggle()
         case .dismissActionView:
             removeAnnotationAndOverlays()
             mapView.showAnnotations(mapView.annotations, animated: true)
@@ -207,46 +208,7 @@ class HomeController: UIViewController {
         }
     }
     
-    // MARK: - Shared API
-    
-    func fetchUserData() {
-        guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        Service.shared.fetchUserData(uid: currentUid) { user in
-            self.user = user
-        }
-    }
-
-    func checkIfUserIsLoggedIn() {
-        if Auth.auth().currentUser?.uid == nil {
-            DispatchQueue.main.async {
-                let nav = UINavigationController(rootViewController: LoginController())
-                nav.modalPresentationStyle = .fullScreen
-                self.present(nav, animated: true, completion: nil)
-            }
-        } else {
-            configure()
-        }
-    }
-    
-    func signOut() {
-        do {
-            try Auth.auth().signOut()
-            DispatchQueue.main.async {
-                let nav = UINavigationController(rootViewController: LoginController())
-                nav.modalPresentationStyle = .fullScreen
-                self.present(nav, animated: true, completion: nil)
-            }
-        } catch {
-            print("DEBUG: Error signing out")
-        }
-    }
-    
     // MARK: - Helpers
-    
-    func configure() {
-        configureUI()
-        fetchUserData()
-    }
     
     fileprivate func configureActionButton(config: ActionButtonConfiguration) {
         switch config {

@@ -22,6 +22,9 @@
 		9F636527253EB61800DCC065 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F636526253EB61800DCC065 /* Service.swift */; };
 		9F63652A253EBDDA00DCC065 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F636529253EBDDA00DCC065 /* User.swift */; };
 		9F63652D253EC7E300DCC065 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63652C253EC7E300DCC065 /* LocationHandler.swift */; };
+		9F7CCA4B254838F2002505B3 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CCA4A254838F2002505B3 /* MenuController.swift */; };
+		9F7CCA4E25483907002505B3 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CCA4D25483907002505B3 /* ContainerController.swift */; };
+		9F7CCA5125483E83002505B3 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CCA5025483E83002505B3 /* MenuHeader.swift */; };
 		9F97068A25416791007F5014 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97068925416791007F5014 /* Trip.swift */; };
 		9F97068D25417945007F5014 /* PickupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97068C25417945007F5014 /* PickupController.swift */; };
 		9FC81986253C107700F4141B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC81985253C107700F4141B /* Extensions.swift */; };
@@ -51,6 +54,9 @@
 		9F636526253EB61800DCC065 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9F636529253EBDDA00DCC065 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9F63652C253EC7E300DCC065 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		9F7CCA4A254838F2002505B3 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		9F7CCA4D25483907002505B3 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		9F7CCA5025483E83002505B3 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		9F97068925416791007F5014 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		9F97068C25417945007F5014 /* PickupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupController.swift; sourceTree = "<group>"; };
 		9FC81985253C107700F4141B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -137,8 +143,8 @@
 		9F46EFBD253C05300046C4A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9F1C02D5253C061F0058CD21 /* LoginController.swift */,
-				9FC81988253C5AA700F4141B /* SignUpController.swift */,
+				9F7CCA49254838E4002505B3 /* SideMenu */,
+				9F7CCA48254838D3002505B3 /* Authentication */,
 				9F3A77EB253D8362007B46EB /* HomeController.swift */,
 				9F97068C25417945007F5014 /* PickupController.swift */,
 			);
@@ -153,6 +159,7 @@
 				9F3A77F1253DC4CF007B46EB /* LocationInputView.swift */,
 				9F3A77F4253DEDA7007B46EB /* LocationCell.swift */,
 				9F4A4D23254073AE0068A45C /* RideActionView.swift */,
+				9F7CCA5025483E83002505B3 /* MenuHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +172,24 @@
 				9F97068925416791007F5014 /* Trip.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9F7CCA48254838D3002505B3 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C02D5253C061F0058CD21 /* LoginController.swift */,
+				9FC81988253C5AA700F4141B /* SignUpController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		9F7CCA49254838E4002505B3 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9F7CCA4A254838F2002505B3 /* MenuController.swift */,
+				9F7CCA4D25483907002505B3 /* ContainerController.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		C93D89EBD2606EF1CAC35961 /* Pods */ = {
@@ -301,7 +326,10 @@
 				9F46EFA6253BFDEF0046C4A6 /* AppDelegate.swift in Sources */,
 				9F1C02D6253C061F0058CD21 /* LoginController.swift in Sources */,
 				9F3A77F5253DEDA7007B46EB /* LocationCell.swift in Sources */,
+				9F7CCA4B254838F2002505B3 /* MenuController.swift in Sources */,
 				9F63652D253EC7E300DCC065 /* LocationHandler.swift in Sources */,
+				9F7CCA4E25483907002505B3 /* ContainerController.swift in Sources */,
+				9F7CCA5125483E83002505B3 /* MenuHeader.swift in Sources */,
 				9F46EFA8253BFDEF0046C4A6 /* SceneDelegate.swift in Sources */,
 				9F4A4D24254073AE0068A45C /* RideActionView.swift in Sources */,
 				9F63652A253EBDDA00DCC065 /* User.swift in Sources */,
