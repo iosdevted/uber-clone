@@ -1,4 +1,4 @@
-# uber-clone
+# Uber Clone 🚕
 iOS Uber Clone with Swift &amp; Firebase
 
 <p>
