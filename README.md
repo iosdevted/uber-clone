@@ -5,6 +5,10 @@ iOS Uber Clone with Swift &amp; Firebase
  This project is a clone of Uber which is a transportation network application. It allows riders to submit trip request which is then routed to Uber drivers who use their own cars.
 </p>
 
+<center>
+  <img src="https://user-images.githubusercontent.com/50784573/105034607-11cdd700-5a9d-11eb-9193-716f06837119.jpg"/>
+</center>
+
 ## User Types
 
 - Rider: You can request a ride while looking at your location (which is updated very frequently) on a map. Once you click the 'Request Ride' button, your request is stored on the online database.
