@@ -21,7 +21,7 @@ iOS Uber Clone with Swift &amp; Firebase
 3. Install the pods by running
 
 ```
-pod update
+pod install
 ```
 
 4. Open the xcworkspace file with the latest version of Xcode
